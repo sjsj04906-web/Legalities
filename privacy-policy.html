@@ -2,44 +2,194 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy • Discord Moderation Bot</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Privacy Policy • Hacker</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500&amp;display=swap');
-        :root { --primary: #5865F2; }
+        :root { 
+            --primary: #5865F2; 
+            --bg-start: #0a0a1f;
+            --bg-end: #1c1c2e;
+            --card: #18181b;
+            --text: #e0e0e0;
+            --text-light: #a1a1aa;
+            --border: #27272a;
+        }
         * { margin:0; padding:0; box-sizing:border-box; }
-        body { font-family:'Inter', system-ui, sans-serif; line-height:1.7; color:#222; background:#f8f9fa; }
-        .container { max-width:1000px; margin:40px auto; background:white; border-radius:20px; box-shadow:0 15px 40px rgba(0,0,0,0.1); overflow:hidden; }
-        header { background:linear-gradient(135deg, #5865F2, #4752C4); color:white; padding:60px 40px; text-align:center; position:relative; }
-        header::after { content:''; position:absolute; bottom:0; left:0; right:0; height:6px; background:linear-gradient(90deg, #fff, #5865F2); }
-        header h1 { font-family:'Space Grotesk', sans-serif; font-size:2.6rem; margin-bottom:6px; }
-        header p { font-size:1.15rem; opacity:0.95; }
-        .nav { display:flex; justify-content:center; gap:30px; background:#fff; padding:18px 0; border-bottom:1px solid #e5e7eb; }
-        .nav a { color:#5865F2; text-decoration:none; font-weight:600; font-size:1.05rem; padding:8px 20px; border-radius:9999px; transition:all 0.3s; }
+        html { scroll-behavior: smooth; }
+        body { 
+            font-family:'Inter', system-ui, sans-serif; 
+            line-height:1.7; 
+            color:var(--text); 
+            background: linear-gradient(180deg, var(--bg-start) 0%, var(--bg-end) 100%);
+            min-height: 100vh;
+        }
+        .container { 
+            max-width:1000px; 
+            margin:40px auto; 
+            background:var(--card); 
+            border-radius:20px; 
+            box-shadow:0 15px 40px rgba(0,0,0,0.5); 
+            overflow:hidden; 
+            border:1px solid var(--border);
+        }
+        header { 
+            background:linear-gradient(135deg, #5865F2, #4752C4); 
+            color:white; 
+            padding:60px 40px; 
+            text-align:center; 
+            position:relative; 
+        }
+        header::after { 
+            content:''; 
+            position:absolute; 
+            bottom:0; 
+            left:0; 
+            right:0; 
+            height:6px; 
+            background:linear-gradient(90deg, #fff, #5865F2); 
+        }
+        header h1 { 
+            font-family:'Space Grotesk', sans-serif; 
+            font-size:2.8rem; 
+            margin-bottom:8px; 
+        }
+        header .subtitle { 
+            font-size:1.2rem; 
+            opacity:0.9; 
+            font-weight:400; 
+        }
+        .nav { 
+            display:flex; 
+            justify-content:center; 
+            gap:30px; 
+            background:var(--card); 
+            padding:18px 0; 
+            border-bottom:1px solid var(--border); 
+            flex-wrap: wrap;
+        }
+        .nav a { 
+            color:#c3c3ff; 
+            text-decoration:none; 
+            font-weight:600; 
+            font-size:1.05rem; 
+            padding:8px 20px; 
+            border-radius:9999px; 
+            transition:all 0.3s; 
+        }
         .nav a:hover { background:#5865F2; color:white; }
         .content-wrapper { display:flex; padding:50px 60px; gap:40px; }
-        .main-content { flex:1; }
-        .toc { width:260px; background:#f8f9fa; padding:30px 25px; border-radius:16px; position:sticky; top:30px; height:fit-content; }
+        .main-content { flex:1; min-width:0; }
+        .toc { 
+            width:260px; 
+            background:#111113; 
+            padding:30px 25px; 
+            border-radius:16px; 
+            position:sticky; 
+            top:30px; 
+            height:fit-content; 
+            border:1px solid var(--border);
+            flex-shrink: 0;
+        }
         .toc h3 { margin-bottom:15px; font-size:1.1rem; color:#5865F2; }
         .toc ul { list-style:none; }
-        .toc a { display:block; padding:8px 0; color:#444; text-decoration:none; font-size:1rem; }
+        .toc a { 
+            display:block; 
+            padding:8px 0; 
+            color:#c3c3ff; 
+            text-decoration:none; 
+            font-size:1rem; 
+        }
         .toc a:hover { color:#5865F2; padding-left:8px; }
-        h2 { font-size:1.65rem; margin:40px 0 16px; color:#111; border-left:5px solid #5865F2; padding-left:18px; }
-        p, li { margin-bottom:14px; font-size:1.08rem; }
+        h2 { 
+            font-size:1.65rem; 
+            margin:40px 0 16px; 
+            color:#fff; 
+            border-left:5px solid #5865F2; 
+            padding-left:18px; 
+        }
+        p, li { margin-bottom:14px; font-size:1.08rem; color:var(--text-light); }
         ul { padding-left:26px; }
-        .ribbon { position:absolute; top:30px; right:30px; background:#fff; color:#5865F2; font-weight:600; font-size:0.95rem; padding:8px 18px; border-radius:9999px; box-shadow:0 4px 15px rgba(88,101,242,0.2); }
-        .footer { background:#f8f9fa; padding:40px; text-align:center; color:#666; font-size:0.95rem; border-top:1px solid #e5e7eb; }
-        .print-btn { position:fixed; bottom:30px; right:30px; background:var(--primary); color:white; border:none; padding:16px 28px; border-radius:9999px; font-weight:600; box-shadow:0 10px 25px rgba(88,101,242,0.3); cursor:pointer; display:flex; align-items:center; gap:10px; transition:all 0.3s; }
-        .print-btn:hover { transform:translateY(-4px); box-shadow:0 15px 30px rgba(88,101,242,0.4); }
-        @media (max-width:768px) { .content-wrapper { flex-direction:column; } .toc { width:100%; position:static; } }
+        strong { color:#fff; }
+        .ribbon { 
+            position:absolute; 
+            top:30px; 
+            right:30px; 
+            background:#18181b; 
+            color:#5865F2; 
+            font-weight:600; 
+            font-size:0.95rem; 
+            padding:8px 18px; 
+            border-radius:9999px; 
+            box-shadow:0 4px 15px rgba(88,101,242,0.3); 
+        }
+        .footer { 
+            background:#111113; 
+            padding:40px; 
+            text-align:center; 
+            color:#888; 
+            font-size:0.95rem; 
+            border-top:1px solid var(--border); 
+        }
+        .print-btn, .back-to-top { 
+            position:fixed; 
+            bottom:30px; 
+            right:30px; 
+            background:#5865F2; 
+            color:white; 
+            border:none; 
+            padding:16px 28px; 
+            border-radius:9999px; 
+            font-weight:600; 
+            box-shadow:0 10px 25px rgba(88,101,242,0.4); 
+            cursor:pointer; 
+            display:flex; 
+            align-items:center; 
+            gap:10px; 
+            transition:all 0.3s; 
+            z-index: 100;
+        }
+        .back-to-top { bottom: 90px; font-size: 0.95rem; }
+        .print-btn:hover, .back-to-top:hover { 
+            transform:translateY(-4px); 
+            box-shadow:0 15px 30px rgba(88,101,242,0.5); 
+        }
+        a { color:#c3c3ff; }
+        a:hover { color:#5865F2; }
+
+        /* Mobile - looks identical on desktop */
+        @media (max-width: 1024px) {
+            .container { margin: 20px auto; border-radius: 16px; }
+            header { padding: 45px 25px; }
+            header h1 { font-size: 2.4rem; }
+            .content-wrapper { padding: 35px 30px; gap: 25px; }
+            .toc { width: 240px; }
+        }
+        @media (max-width: 768px) {
+            .content-wrapper { flex-direction: column; padding: 30px 20px; gap: 20px; }
+            .toc { width: 100%; position: static; order: -1; margin-bottom: 20px; }
+            h2 { font-size: 1.45rem; }
+            p, li { font-size: 1.05rem; }
+            .nav { padding: 15px 10px; gap: 15px; }
+            .nav a { padding: 10px 18px; font-size: 1rem; }
+            header .subtitle { font-size: 1.05rem; }
+            .ribbon { top: 20px; right: 20px; font-size: 0.9rem; padding: 6px 14px; }
+        }
+        @media (max-width: 480px) {
+            .container { margin: 10px auto; border-radius: 12px; }
+            header { padding: 35px 20px; }
+            header h1 { font-size: 2.1rem; }
+            .content-wrapper { padding: 25px 15px; }
+            .print-btn, .back-to-top { bottom: 20px; right: 20px; padding: 14px 22px; font-size: 0.95rem; }
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
             <div class="ribbon">Last Updated &amp; Effective: April 2026</div>
-            <h1>Discord Moderation Bot</h1>
-            <p>Privacy Policy (UK – GDPR Aligned)</p>
+            <h1>Hacker</h1>
+            <p class="subtitle">Advanced Discord Moderation Bot</p>
         </header>
 
         <div class="nav">
@@ -49,11 +199,11 @@
 
         <div class="content-wrapper">
             <div class="main-content">
-                <h2>1. Data Controller</h2>
-                <p>The Developer of this Bot is the data controller under the UK GDPR and the Data Protection Act 2018. Contact details are provided in Section 12.</p>
+                <h2 id="1">1. Data Controller</h2>
+                <p>The Developer of this bot (Hacker) is the data controller under the UK GDPR and the Data Protection Act 2018. Contact details are provided in Section 12.</p>
 
-                <h2>2. Data Collected</h2>
-                <p>We collect and process the following categories of personal data (via the Discord API and only as necessary for the Service):</p>
+                <h2 id="2">2. Data Collected</h2>
+                <p>We collect and process the following categories of personal data (via the Discord API and only as necessary for Hacker):</p>
                 <ul>
                     <li>Discord User IDs and usernames (pseudonymous identifiers).</li>
                     <li>Server (Guild) IDs and channel IDs.</li>
@@ -62,13 +212,13 @@
                 </ul>
                 <p>We do not collect sensitive special-category data unless incidentally present in moderated messages (in which case it is processed only as required for moderation).</p>
 
-                <h2>3. Legal Basis for Processing</h2>
+                <h2 id="3">3. Legal Basis for Processing</h2>
                 <p>Processing is based on <strong>legitimate interests</strong> (UK GDPR Article 6(1)(f)): providing effective server moderation and safety tools at the request of server administrators. Where message content is processed, this is limited to what is strictly necessary (data minimisation).</p>
 
-                <h2>4. Automated Decision-Making and Profiling</h2>
-                <p>The Service uses automated systems to apply moderation actions based on administrator-defined rules (keyword detection, behaviour thresholds, spam patterns, etc.).</p>
+                <h2 id="4">4. Automated Decision-Making and Profiling</h2>
+                <p>Hacker uses automated systems to apply moderation actions based on administrator-defined rules (keyword detection, behaviour thresholds, spam patterns, etc.).</p>
                 <p>These decisions <strong>may</strong> produce legal or similarly significant effects (e.g., temporary/permanent bans).</p>
-                <p><strong>Meaningful information about the logic involved:</strong> Rules are pre-configured by server administrators and applied consistently and transparently. The Bot does not use AI/ML profiling beyond rule-based triggers unless explicitly enabled and documented by the administrator.</p>
+                <p><strong>Meaningful information about the logic involved:</strong> Rules are pre-configured by server administrators and applied consistently and transparently. Hacker does not use AI/ML profiling beyond rule-based triggers unless explicitly enabled and documented by the administrator.</p>
                 <p><strong>Safeguards (UK GDPR Article 22):</strong></p>
                 <ul>
                     <li>Users have the right to request <strong>human review</strong> of any automated decision.</li>
@@ -77,13 +227,13 @@
                 </ul>
                 <p>We do not make solely automated decisions outside the scope of administrator-configured rules.</p>
 
-                <h2>5. Data Usage</h2>
+                <h2 id="5">5. Data Usage</h2>
                 <p>Data is used exclusively to deliver the moderation features requested by server administrators. We do not use data for marketing, profiling for advertising, or any unrelated purpose.</p>
 
-                <h2>6. Data Retention</h2>
-                <p>Data is retained only as long as necessary for the provision of moderation services (e.g., logs are typically kept for 7–30 days or as configured by the administrator). Data is automatically deleted when: (a) the Bot is removed from the server, (b) a deletion request is honoured, or (c) it is no longer required for legitimate moderation purposes.</p>
+                <h2 id="6">6. Data Retention</h2>
+                <p>Data is retained only as long as necessary for the provision of moderation services (e.g., logs are typically kept for 7–30 days or as configured by the administrator). Data is automatically deleted when: (a) Hacker is removed from the server, (b) a deletion request is honoured, or (c) it is no longer required for legitimate moderation purposes.</p>
 
-                <h2>7. Data Sharing and Transfers</h2>
+                <h2 id="7">7. Data Sharing and Transfers</h2>
                 <p>We do not sell data. Data is not shared with third parties except:</p>
                 <ul>
                     <li>With Discord Inc./Discord Netherlands BV as required by the Discord API and Developer Terms of Service.</li>
@@ -91,10 +241,10 @@
                 </ul>
                 <p>No international transfers outside the UK/EEA occur. All processing is performed in the UK.</p>
 
-                <h2>8. Data Security</h2>
+                <h2 id="8">8. Data Security</h2>
                 <p>We implement appropriate technical and organisational measures to protect personal data against unauthorised access, loss, or breach, in line with UK GDPR Article 32.</p>
 
-                <h2>9. Your Rights under UK GDPR</h2>
+                <h2 id="9">9. Your Rights under UK GDPR</h2>
                 <p>You have the following rights (subject to applicable exemptions):</p>
                 <ul>
                     <li>Access, rectification, erasure (“right to be forgotten”), restriction of processing.</li>
@@ -103,16 +253,16 @@
                     <li>Data portability (where applicable).</li>
                     <li>Lodge a complaint with the UK Information Commissioner’s Office (ICO) at <a href="https://ico.org.uk" target="_blank">https://ico.org.uk</a>.</li>
                 </ul>
-                <p>To exercise any right, contact the Developer (Section 12). We will respond within one month.</p>
+                <p>To exercise any right, contact the developer on Discord: <strong>@communism1037</strong>. We will respond within one month.</p>
 
-                <h2>10. Children’s Privacy</h2>
-                <p>The Service is not directed at children under 13. Discord’s minimum age is 13; we do not knowingly process data of children under 13. If you believe such data has been processed, contact us immediately for deletion.</p>
+                <h2 id="10">10. Children’s Privacy</h2>
+                <p>Hacker is not directed at children under 13. Discord’s minimum age is 13; we do not knowingly process data of children under 13. If you believe such data has been processed, contact us immediately for deletion.</p>
 
-                <h2>11. Changes to this Privacy Policy</h2>
-                <p>We may update this Policy to reflect changes in the Service or legal requirements. Material changes will be notified via the Bot or Discord where possible. Continued use constitutes acceptance.</p>
+                <h2 id="11">11. Changes to this Privacy Policy</h2>
+                <p>We may update this Policy to reflect changes in Hacker or legal requirements. Material changes will be notified via the bot or Discord where possible. Continued use constitutes acceptance.</p>
 
-                <h2>12. Contact</h2>
-                <p>For any privacy queries, data subject requests, or to exercise your rights, contact the Developer through the official support channel listed in the Bot’s documentation or server. Please provide your Discord User ID and relevant server details to enable a timely response.</p>
+                <h2 id="12">12. Contact</h2>
+                <p>For any privacy queries, data subject requests, or to exercise your rights, contact the developer on Discord: <strong>@communism1037</strong>. Please provide your Discord User ID and relevant server details to enable a timely response.</p>
             </div>
 
             <div class="toc">
@@ -140,5 +290,13 @@
     </div>
 
     <button onclick="window.print()" class="print-btn">🖨️ Print / Save as PDF</button>
+    <button onclick="window.scrollTo({top:0, behavior:'smooth'})" class="back-to-top" style="display:none;">↑ Back to Top</button>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            const btn = document.querySelector('.back-to-top');
+            btn.style.display = window.scrollY > 400 ? 'flex' : 'none';
+        });
+    </script>
 </body>
 </html>
