@@ -2,44 +2,194 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms of Service • Discord Moderation Bot</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Terms of Service • Hacker</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500&amp;display=swap');
-        :root { --primary: #5865F2; }
+        :root { 
+            --primary: #5865F2; 
+            --bg-start: #0a0a1f;
+            --bg-end: #1c1c2e;
+            --card: #18181b;
+            --text: #e0e0e0;
+            --text-light: #a1a1aa;
+            --border: #27272a;
+        }
         * { margin:0; padding:0; box-sizing:border-box; }
-        body { font-family:'Inter', system-ui, sans-serif; line-height:1.7; color:#222; background:#f8f9fa; }
-        .container { max-width:1000px; margin:40px auto; background:white; border-radius:20px; box-shadow:0 15px 40px rgba(0,0,0,0.1); overflow:hidden; }
-        header { background:linear-gradient(135deg, #5865F2, #4752C4); color:white; padding:60px 40px; text-align:center; position:relative; }
-        header::after { content:''; position:absolute; bottom:0; left:0; right:0; height:6px; background:linear-gradient(90deg, #fff, #5865F2); }
-        header h1 { font-family:'Space Grotesk', sans-serif; font-size:2.6rem; margin-bottom:6px; }
-        header p { font-size:1.15rem; opacity:0.95; }
-        .nav { display:flex; justify-content:center; gap:30px; background:#fff; padding:18px 0; border-bottom:1px solid #e5e7eb; }
-        .nav a { color:#5865F2; text-decoration:none; font-weight:600; font-size:1.05rem; padding:8px 20px; border-radius:9999px; transition:all 0.3s; }
+        html { scroll-behavior: smooth; }
+        body { 
+            font-family:'Inter', system-ui, sans-serif; 
+            line-height:1.7; 
+            color:var(--text); 
+            background: linear-gradient(180deg, var(--bg-start) 0%, var(--bg-end) 100%);
+            min-height: 100vh;
+        }
+        .container { 
+            max-width:1000px; 
+            margin:40px auto; 
+            background:var(--card); 
+            border-radius:20px; 
+            box-shadow:0 15px 40px rgba(0,0,0,0.5); 
+            overflow:hidden; 
+            border:1px solid var(--border);
+        }
+        header { 
+            background:linear-gradient(135deg, #5865F2, #4752C4); 
+            color:white; 
+            padding:60px 40px; 
+            text-align:center; 
+            position:relative; 
+        }
+        header::after { 
+            content:''; 
+            position:absolute; 
+            bottom:0; 
+            left:0; 
+            right:0; 
+            height:6px; 
+            background:linear-gradient(90deg, #fff, #5865F2); 
+        }
+        header h1 { 
+            font-family:'Space Grotesk', sans-serif; 
+            font-size:2.8rem; 
+            margin-bottom:8px; 
+        }
+        header .subtitle { 
+            font-size:1.2rem; 
+            opacity:0.9; 
+            font-weight:400; 
+        }
+        .nav { 
+            display:flex; 
+            justify-content:center; 
+            gap:30px; 
+            background:var(--card); 
+            padding:18px 0; 
+            border-bottom:1px solid var(--border); 
+            flex-wrap: wrap;
+        }
+        .nav a { 
+            color:#c3c3ff; 
+            text-decoration:none; 
+            font-weight:600; 
+            font-size:1.05rem; 
+            padding:8px 20px; 
+            border-radius:9999px; 
+            transition:all 0.3s; 
+        }
         .nav a:hover { background:#5865F2; color:white; }
         .content-wrapper { display:flex; padding:50px 60px; gap:40px; }
-        .main-content { flex:1; }
-        .toc { width:260px; background:#f8f9fa; padding:30px 25px; border-radius:16px; position:sticky; top:30px; height:fit-content; }
+        .main-content { flex:1; min-width:0; }
+        .toc { 
+            width:260px; 
+            background:#111113; 
+            padding:30px 25px; 
+            border-radius:16px; 
+            position:sticky; 
+            top:30px; 
+            height:fit-content; 
+            border:1px solid var(--border);
+            flex-shrink: 0;
+        }
         .toc h3 { margin-bottom:15px; font-size:1.1rem; color:#5865F2; }
         .toc ul { list-style:none; }
-        .toc a { display:block; padding:8px 0; color:#444; text-decoration:none; font-size:1rem; }
+        .toc a { 
+            display:block; 
+            padding:8px 0; 
+            color:#c3c3ff; 
+            text-decoration:none; 
+            font-size:1rem; 
+        }
         .toc a:hover { color:#5865F2; padding-left:8px; }
-        h2 { font-size:1.65rem; margin:40px 0 16px; color:#111; border-left:5px solid #5865F2; padding-left:18px; }
-        p, li { margin-bottom:14px; font-size:1.08rem; }
+        h2 { 
+            font-size:1.65rem; 
+            margin:40px 0 16px; 
+            color:#fff; 
+            border-left:5px solid #5865F2; 
+            padding-left:18px; 
+        }
+        p, li { margin-bottom:14px; font-size:1.08rem; color:var(--text-light); }
         ul { padding-left:26px; }
-        .ribbon { position:absolute; top:30px; right:30px; background:#fff; color:#5865F2; font-weight:600; font-size:0.95rem; padding:8px 18px; border-radius:9999px; box-shadow:0 4px 15px rgba(88,101,242,0.2); }
-        .footer { background:#f8f9fa; padding:40px; text-align:center; color:#666; font-size:0.95rem; border-top:1px solid #e5e7eb; }
-        .print-btn { position:fixed; bottom:30px; right:30px; background:var(--primary); color:white; border:none; padding:16px 28px; border-radius:9999px; font-weight:600; box-shadow:0 10px 25px rgba(88,101,242,0.3); cursor:pointer; display:flex; align-items:center; gap:10px; transition:all 0.3s; }
-        .print-btn:hover { transform:translateY(-4px); box-shadow:0 15px 30px rgba(88,101,242,0.4); }
-        @media (max-width:768px) { .content-wrapper { flex-direction:column; } .toc { width:100%; position:static; } }
+        strong { color:#fff; }
+        .ribbon { 
+            position:absolute; 
+            top:30px; 
+            right:30px; 
+            background:#18181b; 
+            color:#5865F2; 
+            font-weight:600; 
+            font-size:0.95rem; 
+            padding:8px 18px; 
+            border-radius:9999px; 
+            box-shadow:0 4px 15px rgba(88,101,242,0.3); 
+        }
+        .footer { 
+            background:#111113; 
+            padding:40px; 
+            text-align:center; 
+            color:#888; 
+            font-size:0.95rem; 
+            border-top:1px solid var(--border); 
+        }
+        .print-btn, .back-to-top { 
+            position:fixed; 
+            bottom:30px; 
+            right:30px; 
+            background:#5865F2; 
+            color:white; 
+            border:none; 
+            padding:16px 28px; 
+            border-radius:9999px; 
+            font-weight:600; 
+            box-shadow:0 10px 25px rgba(88,101,242,0.4); 
+            cursor:pointer; 
+            display:flex; 
+            align-items:center; 
+            gap:10px; 
+            transition:all 0.3s; 
+            z-index: 100;
+        }
+        .back-to-top { bottom: 90px; font-size: 0.95rem; }
+        .print-btn:hover, .back-to-top:hover { 
+            transform:translateY(-4px); 
+            box-shadow:0 15px 30px rgba(88,101,242,0.5); 
+        }
+        a { color:#c3c3ff; }
+        a:hover { color:#5865F2; }
+
+        /* Mobile - looks the same on desktop */
+        @media (max-width: 1024px) {
+            .container { margin: 20px auto; border-radius: 16px; }
+            header { padding: 45px 25px; }
+            header h1 { font-size: 2.4rem; }
+            .content-wrapper { padding: 35px 30px; gap: 25px; }
+            .toc { width: 240px; }
+        }
+        @media (max-width: 768px) {
+            .content-wrapper { flex-direction: column; padding: 30px 20px; gap: 20px; }
+            .toc { width: 100%; position: static; order: -1; margin-bottom: 20px; }
+            h2 { font-size: 1.45rem; }
+            p, li { font-size: 1.05rem; }
+            .nav { padding: 15px 10px; gap: 15px; }
+            .nav a { padding: 10px 18px; font-size: 1rem; }
+            header .subtitle { font-size: 1.05rem; }
+            .ribbon { top: 20px; right: 20px; font-size: 0.9rem; padding: 6px 14px; }
+        }
+        @media (max-width: 480px) {
+            .container { margin: 10px auto; border-radius: 12px; }
+            header { padding: 35px 20px; }
+            header h1 { font-size: 2.1rem; }
+            .content-wrapper { padding: 25px 15px; }
+            .print-btn, .back-to-top { bottom: 20px; right: 20px; padding: 14px 22px; font-size: 0.95rem; }
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
             <div class="ribbon">Last Updated &amp; Effective: April 2026</div>
-            <h1>Discord Moderation Bot</h1>
-            <p>Terms of Service (UK)</p>
+            <h1>Hacker</h1>
+            <p class="subtitle">Advanced Discord Moderation Bot</p>
         </header>
 
         <div class="nav">
@@ -49,54 +199,55 @@
 
         <div class="content-wrapper">
             <div class="main-content">
-                <h2>1. Introduction</h2>
-                <p>This Discord moderation bot (“Service” or “Bot”) is developed and operated by the Developer, a UK-based entity. The Service is provided in compliance with UK law, the Discord Developer Terms of Service, Discord Developer Policy, and all applicable regulations. These Terms of Service (“Terms”) govern your access to and use of the Service. By inviting, adding, or using the Bot in any Discord server, you agree to these Terms and Discord’s Terms of Service (available at <a href="https://discord.com/terms" target="_blank">https://discord.com/terms</a>).</p>
+                <!-- (All sections identical to previous version - omitted here for brevity, but copy from your last file) -->
+                <h2 id="1">1. Introduction</h2>
+                <p>This Discord moderation bot (“Service” or “Hacker”) is developed and operated by the Developer, a UK-based entity. The Service is provided in compliance with UK law, the Discord Developer Terms of Service, Discord Developer Policy, and all applicable regulations. These Terms of Service (“Terms”) govern your access to and use of Hacker. By inviting, adding, or using Hacker in any Discord server, you agree to these Terms and Discord’s Terms of Service (available at <a href="https://discord.com/terms" target="_blank">https://discord.com/terms</a>).</p>
 
-                <h2>2. Acceptance</h2>
-                <p>Your use of the Service constitutes acceptance of these Terms. If you do not agree, do not invite or use the Bot. Server administrators are responsible for ensuring that members of their server are aware of and bound by these Terms where the Bot is active.</p>
+                <h2 id="2">2. Acceptance</h2>
+                <p>Your use of Hacker constitutes acceptance of these Terms. If you do not agree, do not invite or use the bot. Server administrators are responsible for ensuring that members of their server are aware of and bound by these Terms where Hacker is active.</p>
 
-                <h2>3. Description of Service</h2>
-                <p>The Service provides automated and configurable moderation tools, including message logging, keyword/behaviour-based filtering, automated actions (mute, kick, ban, delete, flag), and server management features. All features are intended solely for server administration and safety purposes. The Bot interacts with Discord’s API and does not host or control Discord servers or user accounts.</p>
+                <h2 id="3">3. Description of Service</h2>
+                <p>Hacker provides automated and configurable moderation tools, including message logging, keyword/behaviour-based filtering, automated actions (mute, kick, ban, delete, flag), and server management features. All features are intended solely for server administration and safety purposes. Hacker interacts with Discord’s API and does not host or control Discord servers or user accounts.</p>
 
-                <h2>4. Automated Decision-Making</h2>
-                <p>The Service may apply automated moderation actions based on rules configured by server administrators. These actions occur without real-time human intervention. Administrators are solely responsible for setting, testing, and reviewing all rules and outcomes. Users affected by automated actions may appeal through the server’s designated moderation process. The Developer does not act as a moderator or adjudicator for individual servers.</p>
+                <h2 id="4">4. Automated Decision-Making</h2>
+                <p>Hacker may apply automated moderation actions based on rules configured by server administrators. These actions occur without real-time human intervention. Administrators are solely responsible for setting, testing, and reviewing all rules and outcomes. Users affected by automated actions may appeal through the server’s designated moderation process. The Developer does not act as a moderator or adjudicator for individual servers.</p>
 
-                <h2>5. User Responsibilities and Prohibited Conduct</h2>
+                <h2 id="5">5. User Responsibilities and Prohibited Conduct</h2>
                 <p>You agree not to:</p>
                 <ul>
-                    <li>Misuse, abuse, reverse-engineer, or attempt to circumvent the Service or its rules.</li>
-                    <li>Use the Service for unlawful purposes or to violate Discord’s Community Guidelines or Terms of Service.</li>
-                    <li>Provide false information when configuring or interacting with the Bot.</li>
-                    <li>Interfere with the Bot’s operation or attempt to overload its systems.</li>
+                    <li>Misuse, abuse, reverse-engineer, or attempt to circumvent Hacker or its rules.</li>
+                    <li>Use Hacker for unlawful purposes or to violate Discord’s Community Guidelines or Terms of Service.</li>
+                    <li>Provide false information when configuring or interacting with Hacker.</li>
+                    <li>Interfere with Hacker’s operation or attempt to overload its systems.</li>
                 </ul>
-                <p>Server administrators must configure the Bot responsibly and monitor its actions. The Developer reserves the right to suspend or remove the Bot from any server for violations of these Terms or Discord’s policies.</p>
+                <p>Server administrators must configure Hacker responsibly and monitor its actions. The Developer reserves the right to suspend or remove Hacker from any server for violations of these Terms or Discord’s policies.</p>
 
-                <h2>6. Data Handling</h2>
-                <p>Any personal data processed by the Service is handled strictly in accordance with our Privacy Policy and solely for providing moderation features. By using the Service you acknowledge and consent to such processing as described in the Privacy Policy.</p>
+                <h2 id="6">6. Data Handling</h2>
+                <p>Any personal data processed by Hacker is handled strictly in accordance with our Privacy Policy and solely for providing moderation features. By using Hacker you acknowledge and consent to such processing as described in the Privacy Policy.</p>
 
-                <h2>7. Availability and Modifications</h2>
-                <p>The Service is provided “as is” and “as available”. We may modify, update, or discontinue any feature or the entire Service at any time without notice or liability. Continued use after changes constitutes acceptance of the revised Terms.</p>
+                <h2 id="7">7. Availability and Modifications</h2>
+                <p>Hacker is provided “as is” and “as available”. We may modify, update, or discontinue any feature or the entire Service at any time without notice or liability. Continued use after changes constitutes acceptance of the revised Terms.</p>
 
-                <h2>8. Intellectual Property</h2>
-                <p>The Service, its code, design, and all related materials are owned by the Developer or its licensors. You are granted a limited, revocable, non-exclusive, non-transferable licence to use the Service only as intended within Discord. You may not copy, modify, distribute, or create derivative works of the Bot.</p>
+                <h2 id="8">8. Intellectual Property</h2>
+                <p>Hacker, its code, design, and all related materials are owned by the Developer or its licensors. You are granted a limited, revocable, non-exclusive, non-transferable licence to use Hacker only as intended within Discord. You may not copy, modify, distribute, or create derivative works of the bot.</p>
 
-                <h2>9. Limitation of Liability</h2>
-                <p>To the fullest extent permitted by UK law, the Developer shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of the Service, including loss of data, server disruptions, or moderation outcomes. The Service is not guaranteed to be error-free or uninterrupted.</p>
+                <h2 id="9">9. Limitation of Liability</h2>
+                <p>To the fullest extent permitted by UK law, the Developer shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of Hacker, including loss of data, server disruptions, or moderation outcomes. Hacker is not guaranteed to be error-free or uninterrupted.</p>
 
-                <h2>10. Indemnification</h2>
-                <p>You agree to indemnify and hold the Developer harmless from any claims, damages, losses, or expenses arising from your violation of these Terms, your server’s use of the Bot, or any content/actions taken by the Bot under your server’s configuration.</p>
+                <h2 id="10">10. Indemnification</h2>
+                <p>You agree to indemnify and hold the Developer harmless from any claims, damages, losses, or expenses arising from your violation of these Terms, your server’s use of Hacker, or any content/actions taken by Hacker under your server’s configuration.</p>
 
-                <h2>11. Termination</h2>
-                <p>The Developer may suspend or terminate the Service (or your server’s access to it) at any time for any reason. Server administrators may remove the Bot at any time.</p>
+                <h2 id="11">11. Termination</h2>
+                <p>The Developer may suspend or terminate Hacker (or your server’s access to it) at any time for any reason. Server administrators may remove the bot at any time.</p>
 
-                <h2>12. Governing Law and Dispute Resolution</h2>
+                <h2 id="12">12. Governing Law and Dispute Resolution</h2>
                 <p>These Terms are governed by the laws of England and Wales. Any disputes shall be subject to the exclusive jurisdiction of the courts of England and Wales.</p>
 
-                <h2>13. Changes to Terms</h2>
-                <p>We may update these Terms from time to time. We will notify users via the Bot or Discord announcement where practicable. Continued use constitutes acceptance.</p>
+                <h2 id="13">13. Changes to Terms</h2>
+                <p>We may update these Terms from time to time. We will notify users via Hacker or Discord announcement where practicable. Continued use constitutes acceptance.</p>
 
-                <h2>14. Contact</h2>
-                <p>For support, legal notices, or inquiries, contact the Developer through the official support channel provided in the Bot’s documentation or server.</p>
+                <h2 id="14">14. Contact</h2>
+                <p>For support, legal notices, or inquiries, contact the developer on Discord: <strong>@communism1037</strong>.</p>
             </div>
 
             <div class="toc">
@@ -126,5 +277,14 @@
     </div>
 
     <button onclick="window.print()" class="print-btn">🖨️ Print / Save as PDF</button>
+    <button onclick="window.scrollTo({top:0, behavior:'smooth'})" class="back-to-top" style="display:none;">↑ Back to Top</button>
+
+    <script>
+        // Show/hide Back to Top button
+        window.addEventListener('scroll', () => {
+            const btn = document.querySelector('.back-to-top');
+            btn.style.display = window.scrollY > 400 ? 'flex' : 'none';
+        });
+    </script>
 </body>
-</html> 
+</html>
